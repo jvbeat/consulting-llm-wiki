@@ -1,0 +1,24 @@
+{
+  "name": "consulting-llm-wiki",
+  "owner": {
+    "name": "João Victor Beato",
+    "url": "https://github.com/jvbeat"
+  },
+  "metadata": {
+    "description": "An LLM wiki for consultants who deliver for many clients at once.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "consulting-llm-wiki",
+      "source": "./",
+      "description": "Client layers, source locks enforced by a linter, authority weighting on ingest, deliverable templates and writing gates for a consulting knowledge base.",
+      "version": "1.0.0",
+      "author": {
+        "name": "João Victor Beato"
+      },
+      "keywords": ["llm-wiki", "second-brain", "consulting", "knowledge-management"],
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "description": "Plain, direct English for client-facing and internal notes. Catches the tics that make text read as machine-written.",
+  "rules": [
+    {"id": "em-dash", "pattern": "—", "severity": "error", "message": "em dash: use a comma, a colon or two sentences"},
+    {"id": "emoji", "pattern": "[\\U0001F300-\\U0001FAFF\\u2600-\\u27BF\\u2B50\\u2705]", "severity": "error", "message": "emoji in a document"},
+    {"id": "bold-label", "pattern": "^\\s*(?:[-*]\\s+)?\\*\\*[^*]{1,40}\\.\\*\\*\\s", "severity": "error", "message": "bold label ending in a period before the idea: start with the full sentence"},
+    {"id": "not-just", "pattern": "\\bit'?s not (?:just|only|merely) [^.]{1,60}[,;] (?:it'?s|but)\\b", "severity": "warn", "message": "\"it's not X, it's Y\" contrast: state the point directly", "flags": "i"},
+    {"id": "inflated-words", "pattern": "\\b(?:delve|tapestry|testament to|game[- ]changer|seamless(?:ly)?|cutting[- ]edge|unlock(?:s|ing)? the power|in today's fast[- ]paced)\\b", "severity": "warn", "message": "inflated wording: say what it does", "flags": "i"},
+    {"id": "hedge", "pattern": "\\b(?:arguably|it is worth noting that|it's important to note that)\\b", "severity": "warn", "message": "filler hedge: drop it or say what is uncertain and why", "flags": "i"}
+  ]
+}

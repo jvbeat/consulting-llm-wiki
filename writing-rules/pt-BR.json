@@ -1,0 +1,11 @@
+{
+  "description": "Português brasileiro direto, para nota interna e documento de cliente. Pega os vícios que denunciam texto de máquina.",
+  "rules": [
+    {"id": "travessao", "pattern": "—", "severity": "error", "message": "travessão: use vírgula, dois-pontos ou duas frases"},
+    {"id": "emoji", "pattern": "[\\U0001F300-\\U0001FAFF\\u2600-\\u27BF\\u2B50\\u2705]", "severity": "error", "message": "emoji em documento"},
+    {"id": "rotulo-com-ponto", "pattern": "^\\s*(?:[-*]\\s+)?\\*\\*[^*]{1,40}\\.\\*\\*\\s", "severity": "error", "message": "rótulo em negrito com ponto antes da ideia: comece pela frase inteira"},
+    {"id": "e-a-x-que", "pattern": "(?:^|[.!?]\\s+)[ÉE] (?:a|o|as|os) [^.,;]{1,40} que\\b", "severity": "error", "message": "definição em \"É a X que Y\": diga o fato com sujeito e verbo"},
+    {"id": "verbo-de-coisa-viva", "pattern": "\\b(?:dados?|abas?|jornadas?|regras?|campos?|cupons?|decis(?:ão|ões))\\s+(?:nasce|nascem|vive|vivem|mora|moram|vira|viram|roda|rodam|destrava|destravam)\\b", "severity": "warn", "message": "verbo de coisa viva: use verbo literal (é criado, fica, funciona, depende de)", "flags": "i"},
+    {"id": "contagem-anunciada", "pattern": "\\b(?:são|há|temos) (?:duas|dois|três|quatro|cinco) (?:coisas|pontos|motivos|razões)\\b", "severity": "warn", "message": "contagem anunciada: diga as ideias em vez de anunciar quantas são", "flags": "i"}
+  ]
+}

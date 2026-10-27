@@ -1,0 +1,6 @@
+{
+  "projects_dir": "1-Projects",
+  "stale_after_days": 45,
+  "heavy_project_notes": 15,
+  "writing_packs": ["en"]
+}
