@@ -115,7 +115,7 @@ A rule that lives in a hook is applied every time. A rule that lives in prose is
 
 ## What stays private
 
-The vault holds client material and must live in a private repository. What is public here is the method, the kit and a fictional example. Nothing in the kit sends data anywhere: the hooks run locally, and the only network call is the optional contradiction check, which uses your own Claude Code session.
+The vault holds client material and must live in a private repository. What is public here is the method, the kit and a fictional example. The kit itself sends nothing anywhere: the hooks run locally, and the only model call is the optional contradiction check, made through your own Claude Code session. Claude Code does send what it reads to the model provider, under the terms of your account. Check each client's contract and data policy before filing their material in the vault, and keep personal data out of it.
 
 ## Where this came from
 

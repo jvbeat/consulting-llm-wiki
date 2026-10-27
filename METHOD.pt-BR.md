@@ -115,7 +115,7 @@ A regra que fica num hook é aplicada sempre. A regra que fica em prosa é aplic
 
 ## O que fica privado
 
-O vault guarda material de cliente e precisa ficar num repositório privado. O que está público aqui é o método, o kit e um exemplo fictício. Nada no kit envia dado para fora: os hooks são executados localmente, e a única chamada de rede é a checagem opcional de contradição, que usa a sua própria sessão do Claude Code.
+O vault guarda material de cliente e precisa ficar num repositório privado. O que está público aqui é o método, o kit e um exemplo fictício. O kit em si não envia nada para fora: os hooks são executados localmente, e a única chamada a modelo é a checagem opcional de contradição, feita pela sua própria sessão do Claude Code. O Claude Code, por sua vez, envia ao provedor do modelo o que lê, nos termos da sua conta. Confira o contrato e a política de dados de cada cliente antes de arquivar o material dele no vault, e deixe dado pessoal de fora.
 
 ## De onde isso veio
 

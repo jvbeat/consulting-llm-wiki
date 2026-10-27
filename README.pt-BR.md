@@ -33,7 +33,7 @@ Depois peça ao Claude para criar o seu vault:
 crie meu vault em ~/consulting-vault
 ```
 
-A skill `new-vault` copia o template, grava o marcador `.llm-wiki`, que liga os hooks só naquela pasta, e inicializa o git. Mantenha o vault em repositório privado, porque ele vai guardar material de cliente. Para escrever em português, coloque `"writing_packs": ["pt-BR"]` no `_meta/llm-wiki.json`.
+A skill `new-vault` copia o template, grava o marcador `.llm-wiki`, que liga os hooks só naquela pasta, e inicializa o git. Mantenha o vault em repositório privado, porque ele vai guardar material de cliente. O Claude Code envia ao provedor do modelo o que lê, então confira o contrato e a política de dados de cada cliente antes de arquivar o material dele, e deixe dado pessoal de fora. Para escrever em português, coloque `"writing_packs": ["pt-BR"]` no `_meta/llm-wiki.json`.
 
 Sem o plugin, execute `python3 scripts/new_vault.py ~/consulting-vault` e copie as skills que quiser para `.claude/skills/`.
 

@@ -35,7 +35,7 @@ Then ask Claude to create your vault:
 create my vault in ~/consulting-vault
 ```
 
-The `new-vault` skill copies the template, writes the `.llm-wiki` marker that turns the hooks on for that folder only, and initializes git. Keep the vault in a private repository: it will hold client material.
+The `new-vault` skill copies the template, writes the `.llm-wiki` marker that turns the hooks on for that folder only, and initializes git. Keep the vault in a private repository, because it will hold client material. Claude Code sends what it reads to the model provider, so check each client's contract and data policy before filing their material, and keep personal data out.
 
 Without the plugin, run `python3 scripts/new_vault.py ~/consulting-vault` and copy the skills you want into `.claude/skills/`.
 
