@@ -66,7 +66,9 @@ The current state still says "points never expire", although decision D5 made th
 | `skills/query` | Answers from the current state and the canonical sources, declaring what was not checked. |
 | `skills/generate` | Builds deliverables from the decision log and the templates. |
 | `skills/lint` | Runs the source-lock lint and explains how to fix each finding. |
+| `skills/close-project` | Closes, freezes or hands over a client project with a closing dossier, and hands heavy raw files and personal data back to the client. |
 | `hooks` | Session start sync and lock report, stop-time commit warning, writing gate on every Markdown write. |
+| `scripts/raw_offload.py` | Moves heavy raw files to storage the client controls, checking each copy by SHA-256 and recording it in a manifest before deleting it from the vault. |
 | `scripts/check_contradiction.py` | Asks a small model which earlier decisions a new one makes false, before it is recorded. |
 | `template/` | The vault skeleton with the layer schemas, the project template and the deliverable templates. |
 | `METHOD.md` | The method, written so you can adopt it with any agent. |

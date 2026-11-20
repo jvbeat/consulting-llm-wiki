@@ -46,7 +46,7 @@ Every interaction with the vault is one of four operations.
 - Query answers a question. The answer starts from the current state and the canonical source of that domain, cites them, and says what was not checked.
 - Lint is maintenance. A script checks the source locks and reports what broke.
 
-Every operation ends with a line in the log of the layer it touched, with a fixed prefix (`## [2026-10-01] ingest | transcript | Loyalty workshop`), so the history can be read with one grep.
+Every operation ends with an entry in the log of the layer it touched, with a fixed prefix (`## [2026-10-01] ingest | transcript | Loyalty workshop`), so the history can be read with one grep.
 
 ## Source locks
 
@@ -112,6 +112,10 @@ The most important design lesson came from watching rules fail. A rule written i
 - the writing gate checks every Markdown file the agent writes and hands the offending lines back.
 
 A rule that lives in a hook is applied every time. A rule that lives in prose is applied when someone remembers it.
+
+## Closing a client
+
+The end of an engagement is when client data should leave your custody, and it is the step most knowledge bases skip. Closing a project writes a dossier of at most two screens that answers the two questions that come back later: how to present the case, and how to restart if the client returns. Text evidence stays, because it is small and it is what search and the case study use. Heavy binaries go to storage the client controls, each copy checked by SHA-256 and recorded in a manifest before it is deleted from the vault. Extractions with personal data are returned to the client or deleted, and the decision is written in the log. The project then moves to the archive, and the lint warns about any archived project without a dossier.
 
 ## What stays private
 

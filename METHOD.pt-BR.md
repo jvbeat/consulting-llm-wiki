@@ -46,7 +46,7 @@ Toda interação com o vault é uma destas operações.
 - O query responde uma pergunta a partir do estado atual e da fonte canônica daquele domínio, cita as duas e diz o que não foi conferido.
 - O lint faz a manutenção. Um script confere as travas de fonte e reporta o que quebrou.
 
-Toda operação termina com uma linha no log da camada que ela tocou, com prefixo fixo (`## [2026-10-01] ingest | transcript | Workshop de fidelidade`), para que o histórico possa ser lido com um grep.
+Toda operação termina com um registro no log da camada que ela tocou, com prefixo fixo (`## [2026-10-01] ingest | transcript | Workshop de fidelidade`), para que o histórico possa ser lido com um grep.
 
 ## Travas de fonte
 
@@ -112,6 +112,10 @@ A lição de desenho mais importante veio de ver as regras falharem. Uma regra e
 - o gate de escrita confere todo markdown que o agente grava e devolve as linhas com problema.
 
 A regra que fica num hook é aplicada sempre. A regra que fica em prosa é aplicada quando alguém se lembra dela.
+
+## Encerrar um cliente
+
+O fim do contrato é o momento em que o dado do cliente deveria sair da sua custódia, e é o passo que a maioria das bases de conhecimento pula. Encerrar um projeto escreve um dossiê de no máximo duas telas, que responde às duas perguntas que voltam depois: como apresentar o case e como retomar se o cliente voltar. A evidência em texto fica, porque é pequena e é o que a busca e o case usam. Os arquivos binários pesados vão para um armazenamento controlado pelo cliente, e cada cópia é conferida por SHA-256 e registrada num manifesto antes de ser apagada do vault. A extração com dado pessoal é devolvida ao cliente ou apagada, e a decisão fica registrada no log. Depois o projeto vai para o arquivo, e o lint avisa projeto arquivado sem dossiê.
 
 ## O que fica privado
 

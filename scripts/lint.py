@@ -13,6 +13,7 @@ Checks:
   ERROR  current state not re-verified after the latest ingest or decision in the log
   ERROR  broken wikilink
   WARN   canonical document without verified-on, or verified too long ago
+  WARN   archived project without a closing dossier
   INFO   open [PENDING] markers
 
 Usage:
@@ -181,7 +182,7 @@ def check(root, today=None):
         # canonical freshness
         fm = frontmatter(text)
         canonical = fm_value(fm, 'canonical')
-        if canonical and canonical.lower() not in ('false', 'no') and not archived and '/_template/' not in '/' + rel:
+        if canonical and canonical.lower() not in ('false', 'no') and not archived and '/_template/' not in '/' + rel and '/templates/' not in '/' + rel:
             verified = fm_value(fm, 'verified-on')
             if not verified or not DATE.fullmatch(verified):
                 add('WARN', 'canonical-unverified', rel, 1, f'canonical "{canonical}" has no verified-on date')
@@ -246,6 +247,17 @@ def check(root, today=None):
                 if latest and (not verified or verified < latest):
                     add('ERROR', 'state-behind-log', state_rel, 1,
                         f'current state verified on {verified or "never"}, but the log records an ingest or decision on {latest}')
+
+    archive = os.path.join(v.root, cfg.get('archive_dir', '4-Archive'))
+    if os.path.isdir(archive):
+        for project in sorted(os.listdir(archive)):
+            ppath = os.path.join(archive, project)
+            if not os.path.isdir(ppath) or project.startswith(('_', '.')):
+                continue
+            rel = os.path.join(cfg.get('archive_dir', '4-Archive'), project, '_curated', 'closing-dossier.md')
+            if rel not in v.files:
+                add('WARN', 'archived-without-dossier', os.path.join(cfg.get('archive_dir', '4-Archive'), project), 1,
+                    'archived project without _curated/closing-dossier.md: a returning client or a case study starts from nothing')
 
     return findings
 

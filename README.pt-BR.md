@@ -52,7 +52,9 @@ O estado atual do exemplo ainda diz que os pontos nunca expiram, embora a decis�
 | `skills/query` | Responde a partir do estado atual e das fontes canônicas, declarando o que não foi conferido. |
 | `skills/generate` | Monta entregáveis a partir da matriz de decisões e dos templates. |
 | `skills/lint` | Executa o lint das travas de fonte e explica como corrigir cada achado. |
+| `skills/close-project` | Encerra, congela ou passa adiante um projeto de cliente com um dossiê de encerramento, e devolve ao cliente os arquivos brutos pesados e os dados pessoais. |
 | `hooks` | Sincronização e relatório das travas no início da sessão, aviso de commit no fim e gate de escrita em todo markdown gravado. |
+| `scripts/raw_offload.py` | Move os arquivos brutos pesados para um armazenamento controlado pelo cliente, confere cada cópia por SHA-256 e a registra num manifesto antes de apagá-la do vault. |
 | `scripts/check_contradiction.py` | Pergunta a um modelo pequeno quais decisões anteriores a nova torna falsas, antes de ela ser registrada. |
 | `template/` | O esqueleto do vault, com os schemas de camada, o template de projeto e os templates de entregável. |
 | `METHOD.pt-BR.md` | O método, escrito para ser adotado com qualquer agente. |
